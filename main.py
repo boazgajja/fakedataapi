@@ -67,3 +67,10 @@ def generate_patient():
 @app.get("/")
 def root():
     return generate_patient()
+@app.get("/{count}")
+def patient(count:int):
+    result={}
+    for i in range(count):
+        result[i]=generate_patient()
+    return result
+
